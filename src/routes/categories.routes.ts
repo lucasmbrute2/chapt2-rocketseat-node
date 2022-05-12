@@ -12,7 +12,7 @@ routes.post("/categories", (req, res) => {
     description,
   });
 
-  return res.status(201);
+  return res.status(201).send();
 });
 
 export { routes };
