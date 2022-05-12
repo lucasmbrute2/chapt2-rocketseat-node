@@ -1,8 +1,10 @@
 import express from "express";
-import { createCourse } from "./routes";
 
+const port = 3333;
 const app = express();
 
-app.get("/", createCourse);
+app.use(express.json());
 
-app.listen(3333);
+app.listen(port, () => {
+  console.log(`Server is running on ${port}`);
+});
