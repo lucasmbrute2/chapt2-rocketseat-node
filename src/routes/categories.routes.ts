@@ -16,4 +16,10 @@ routes.post("/", (req, res) => {
   return res.status(201).send();
 });
 
+routes.get("/", (req, res) => {
+  const allCategories = categoriesRepository.list();
+
+  return res.json(allCategories);
+});
+
 export { routes };
