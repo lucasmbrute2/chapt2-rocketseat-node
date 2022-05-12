@@ -1,5 +1,4 @@
 import express from "express";
-
 import { createCourse } from "./routes";
 
 const app = express();
