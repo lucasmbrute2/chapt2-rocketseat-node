@@ -7,11 +7,7 @@ interface ICreateCategoryDTO {
 }
 
 export class CategoriesRepository {
-  private categories: Category[];
-
-  constructor() {
-    this.categories = [];
-  }
+  constructor(private categories: Category[]) {}
 
   create({ name, description }: ICreateCategoryDTO): void {
     const category = new Category();
