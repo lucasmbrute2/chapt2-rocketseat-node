@@ -7,10 +7,6 @@ routes.post("/", (req, res) => {
   return createCategoryController.handle(req, res);
 });
 
-routes.get("/", (req, res) => {
-  const allCategories = categoryRepository.list();
-
-  return res.json(allCategories);
-});
+routes.get("/", (req, res) => {});
 
 export { routes };
