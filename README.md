@@ -9,3 +9,4 @@
 
 1 - docker ps (list all containers)
 2 - docker run -p "port":"port" "image name" (start container)
+3 - docker compose (administração de containers)
