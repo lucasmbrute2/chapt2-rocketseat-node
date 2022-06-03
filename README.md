@@ -14,3 +14,4 @@
 5 - docker stop (container name)
 6 - docker logs
 7 - docker rm (id do container)
+8 - docker start (id do container)
