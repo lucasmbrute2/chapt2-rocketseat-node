@@ -11,3 +11,4 @@
 2 - docker run -p "port":"port" "image name" (start container)
 3 - docker compose (administração de containers)
 4 - docker compose up
+5-  docker stop (container name)
