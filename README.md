@@ -13,3 +13,4 @@
 4 - docker compose up
 5 - docker stop (container name)
 6 - docker logs
+7 - docker rm (id do container)
