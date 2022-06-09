@@ -15,3 +15,4 @@
 6 - docker logs
 7 - docker rm (id do container)
 8 - docker start (id do container)
+9 - docker-compose up --force-recreate
