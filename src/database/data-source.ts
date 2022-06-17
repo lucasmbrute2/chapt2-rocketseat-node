@@ -11,8 +11,8 @@ const AppDataSource = new DataSource({
   migrations: [__dirname + "/migrations/**/*{.js,.ts}"]
 })
 
-export function createConnection(): Promise<DataSource> {
-  return AppDataSource.initialize();
+export async function createConnection(): Promise<DataSource> {
+  return await AppDataSource.initialize();
 }
 
 export default AppDataSource
