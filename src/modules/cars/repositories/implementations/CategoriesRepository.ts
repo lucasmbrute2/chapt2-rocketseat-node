@@ -3,7 +3,7 @@ import { Category } from "../../entities/Category";
 import { ICategoriesRepository } from "../ICategoriesRepository";
 
 import { Repository } from "typeorm";
-import AppDataSource from "../../../../database/data-source";
+import { AppDataSource } from "../../../../database/data-source";
 
 // DTO=> Data transfer object
 // singleton pattern
@@ -11,22 +11,11 @@ export class CategoriesRepository implements ICategoriesRepository {
 
   private repository: Repository<Category>
 
-  // eslint-disable-next-line no-use-before-define
-  private static INSTACE: CategoriesRepository;
-
-  private constructor() {
+  constructor() {
     this.repository = AppDataSource.getRepository(Category)
   }
 
-  public static getInstace(): CategoriesRepository {
-    if (!CategoriesRepository.INSTACE) {
-      CategoriesRepository.INSTACE = new CategoriesRepository();
-    }
-
-    return CategoriesRepository.INSTACE;
-  }
-
-  async create({ name, description }: ICreateCategoryDTO): Promise<void> {
+  async createCategory({ name, description }: ICreateCategoryDTO): Promise<void> {
     const category = this.repository.create({
       description,
       name
@@ -38,15 +27,10 @@ export class CategoriesRepository implements ICategoriesRepository {
   async list(): Promise<Category[]> {
     const categories = await this.repository.find();
     return categories;
-
   }
 
   async findByName(name: string): Promise<Category> {
-    const category = await this.repository.findOne({
-      where: {
-        name
-      }
-    })
-    return category;
+    const category = await this.repository.findOneBy({ name })
+    return category
   }
 }
