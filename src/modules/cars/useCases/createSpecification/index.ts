@@ -2,7 +2,7 @@ import { CategoriesRepository } from "../../repositories/implementations/Categor
 import { CreateSpecificationController } from "./createSpecificationController";
 import { CreateSpecificationUseCase } from "./CreateSpecificationUseCase";
 
-const categoryRepository = CategoriesRepository.getInstace();
+const categoryRepository = null;
 const createSpecificationUseCase = new CreateSpecificationUseCase(
   categoryRepository
 );
