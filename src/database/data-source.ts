@@ -7,7 +7,6 @@ export const AppDataSource = new DataSource({
   username: "docker",
   password: "ignite",
   database: "rentx",
-  migrationsRun: true,
   entities: ["Category"],
   migrations: ["1654826967781-CreateCategories"]
 })
